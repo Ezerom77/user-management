@@ -41,7 +41,8 @@
     },
     "imports": {
         "#config/*": "./src/config/*",
-        "#Controllers/*": "./src/controllers*",
+        "#constants/*": "./src/constants/*",
+        "#controllers/*": "./src/controllers*",
         "#Dto/*": "./src/dto/*",
         "#Routes/*": "./src/routes/*",
         "#Schemas/*": "./src/schemas/*"

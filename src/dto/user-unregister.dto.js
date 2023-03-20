@@ -1,7 +1,7 @@
 import { Type } from "@sinclair/typebox";
 import Ajv from "ajv";
 import addErrors from "ajv-errors";
-import { passwordDTOSchema } from "../lib/dto-types.js"
+import { passwordDTOSchema } from "./dto-types.js"
 
 const UnRegisterDTOSchema = Type.Object({
 

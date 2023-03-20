@@ -6,10 +6,10 @@ const userLoginController = async (req, res) => {
   const { email, password } = req.body;
 
   const existingUserByEmail = await UserModel.findOne({ email }).exec();
-  if (!existingUserByEmail) return res.status(401).send('invalid credentials');
+  if (!existingUserByEmail) return res.status(401).send({ errors: ['invalid credentials'] });
 
   const checkPassword = await compare(password, existingUserByEmail.password)
-  if (!checkPassword) return res.status(401).send('invalid credentials');
+  if (!checkPassword) return res.status(401).send({ errors: ['invalid credentials'] });
 
   const jwtConstructor = new SignJWT({ id: existingUserByEmail._id })
 
