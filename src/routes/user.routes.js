@@ -4,6 +4,8 @@ import userRegisterController from '#Controllers//user-register.controller.js';
 import userUpdateDataController from '#Controllers//user-update-data.controller.js';
 import userUpdateEmailController from '#Controllers//user-update-email.controller.js';
 import userUpdatePasswordController from '#Controllers//user-update-password.controller.js';
+import userUnRegisterController from '#Controllers//user-unRegister.controller.js';
+
 import userJWTDTO from '#Dto/user-jwt.dto.js';
 import userLoginDTO from '#Dto/user-login.dto.js';
 import userRegisterDTO from '#Dto/user-register.dto.js'
@@ -13,6 +15,7 @@ import userUpdateEmailDTO from '#Dto/user-update-email.dto.js';
 import userUpdatePasswordDTO from '#Dto/user-update-password.dto.js';
 import { Router } from 'express';
 
+
 const userRouter = Router();
 
 userRouter.post('/register', userRegisterDTO, userRegisterController);
@@ -21,6 +24,6 @@ userRouter.get('/profile', userJWTDTO, userProfileController);
 userRouter.patch('/update-data', userJWTDTO, userUpdateDataDTO, userUpdateDataController);
 userRouter.patch('/update-email', userJWTDTO, userUpdateEmailDTO, userUpdateEmailController);
 userRouter.patch('/update-password', userJWTDTO, userUpdatePasswordDTO, userUpdatePasswordController);
-// userRouter.delete('/unregister', userJWTDTO, userUnRegisterDTO, userUnRegisterController);
+userRouter.delete('/unregister', userJWTDTO, userUnRegisterDTO, userUnRegisterController);
 
 export default userRouter;
